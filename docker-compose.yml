@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    env_file:
+      - .env
+    command: npm start
+  snowplow-micro:
+    image: snowplow/snowplow-micro:latest
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./snowplow-micro/config:/config
+    command: >
+      --collector-config /config/collector.conf
+      --iglu /config/iglu.json

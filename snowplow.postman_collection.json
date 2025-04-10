@@ -1,0 +1,78 @@
+{
+	"info": {
+		"_postman_id": "1ad69755-f3a9-46a3-96e9-64efc951f87c",
+		"name": "snowplow",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15731142"
+	},
+	"item": [
+		{
+			"name": "product",
+			"item": [
+				{
+					"name": "create-product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"index\": 1,\n  \"sku\": \"ABC-123\",\n  \"name\": \"Premium Laptop\",\n  \"brand\": \"TechBrand\",\n  \"category\": \"Electronics\",\n  \"variant\": \"16GB RAM, 512GB SSD\",\n  \"price\": 1200.99,\n  \"quantity\": 10,\n  \"couponCode\": \"DISCOUNT10\",\n  \"position\": 1,\n  \"currencyCode\": \"USD\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email_address\": \"example@example.com\",\n  \"phone_number\": \"123456789\",\n  \"address\": {\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"street\": \"123 Main St\",\n    \"city\": \"Metropolis\",\n    \"region\": \"State\",\n    \"postal_code\": \"12345\",\n    \"country\": \"US\"\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
